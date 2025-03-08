@@ -1,5 +1,10 @@
 # LifetimeOfQuasars
-Estimating the Quasar Formation Rate Using Sloan Digital Sky Survey (SDSS) Data
+
+This repository provides a simple code to estimate the [quasar](https://www.nature.com/articles/1971040a0) formation rate using data from the [Sloan Digital Sky Survey](https://arxiv.org/abs/astro-ph/0006396).
+
+## Disclaimer
+
+I am not an astronomer, so the calculation method may be wrong. Use the code at your own risk.
 
 ## Key Ideas
 
@@ -16,7 +21,7 @@ Estimating the Quasar Formation Rate Using Sloan Digital Sky Survey (SDSS) Data
 
 3. **Quasar Birth Rate Estimation**:
    - The quasar birth rate is calculated approximately.
-   - Negative values in the results are likely due to noise in the data.
+   
 
 ## The code
 
@@ -26,9 +31,9 @@ Requirements to be installed is available [here](requirements.txt).
 
 ## Results
 
-- **Age of the Universe**: Measured in billions of years (Gyr).
-- **Birth Rate**: Measured in quasars per billion years (Gyr<sup>-1</sup>).
-
 ![Quasar Birth Rate Over Time](ages_of_quasars.png)
 
-The quasar birth rate peaks around **2 billion years after the Big Bang** and then declines sharply.
+**Age of the Universe**: measured in billions of years (Gyr).  
+**Birth Rate**: measured in quasars per billion years (Gyr<sup>-1</sup>).  
+
+The quasar birth rate peaks approximately 2 billion years after the Big Bang and then declines sharply. Negative values arise due to errors in approximating the derivative using finite differences on a grid with a limited number of time points.
