@@ -1,20 +1,34 @@
 # LifetimeOfQuasars
-Estimating the Quasar Formation Rate Using Sloan Digital Sky Survey Data
+Estimating the Quasar Formation Rate Using Sloan Digital Sky Survey (SDSS) Data
 
-### Key ideas
+## Key Ideas
 
-1) Quasar lifetime is accepted as 55e6 years. There are not many papers discussing quasar lifetime estimation, [Quasar Clustering and the Lifetime of Quasars](https://arxiv.org/pdf/astro-ph/0002384) is a rare reference. Play with this value in code if you wish.
+1. **Quasar Lifetime**:
+   - The accepted lifetime of quasars is approximately **55 million years**.
+   - Few papers discuss quasar lifetime estimation. One notable reference is [Quasar Clustering and the Lifetime of Quasars](https://arxiv.org/pdf/astro-ph/0002384).
+   - You can adjust this value in the code to explore its impact.
 
-2) The list of quasar z's are queried from [Sky Server](https://skyserver.sdss.org/). The server limits result sets to 500,000 rows, so I split the whole Universe lifetime into subranges and run query for each subrange separately. The subsets are merged. The full list of more than 1 million quasars are available as [quasars.json](quasars.json). The code use this file if it exists, so you can re-build it by deleting from repo local copy and re-running the code.
+2. **Data Collection**:
+   - Quasar redshifts (z) are queried from the [SkyServer](https://skyserver.sdss.org/).
+   - Due to a server limit of 500,000 rows per query, the Universe's lifetime is divided into subranges, and queries are run for each subrange sequentialy.
+   - The results are merged into a single dataset. A full list of approximately 750,000 quasars is available as [quasars.json](quasars.json).
+   - The code uses this file if it exists. To regenerate it, delete the local copy and re-run the code.
 
-3) Estimation of quasar birth rate is calculated approximately. The negative values are result of noise in data, I believe.
+3. **Quasar Birth Rate Estimation**:
+   - The quasar birth rate is calculated approximately.
+   - Negative values in the results are likely due to noise in the data.
 
-### Results
+## The code
 
-Age of Universe is in billions of years (Gyr).
+Python code is available as [quasar_ages.py](quasar_ages.py)
 
-Birth rate is in quasars per billion of years (Gyr<sup>-1</sup>).
+Requirements to be installed is available [here](requirements.txt).
 
-![Quasar Lifetime](ages_of_quasars.png)
+## Results
 
+- **Age of the Universe**: Measured in billions of years (Gyr).
+- **Birth Rate**: Measured in quasars per billion years (Gyr<sup>-1</sup>).
 
+![Quasar Birth Rate Over Time](ages_of_quasars.png)
+
+The quasar birth rate peaks around **2 billion years after the Big Bang** and then declines sharply.
